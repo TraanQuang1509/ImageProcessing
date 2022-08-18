@@ -24,6 +24,8 @@ kernel_ci = np.array([[0,0,1,0,0],
 # out = cv.dilate(out,kernel_sq,iterations=2)
 out = cv.morphologyEx(b_img,cv.MORPH_ERODE,kernel_sq5x5,iterations=15)
 
+####### akfdbdsj
+
 
 cv.imshow('result',out)
 cv.waitKey(0)
