@@ -18,7 +18,7 @@ b_img1 = cv.morphologyEx(b_img, cv.MORPH_CLOSE, kernel_sq5x5, iterations=1)
 b_img1 = cv.erode(b_img1,kernel_sq5x5,iterations=1)
 
 # Distance transform
-d_img = cv.distanceTransform(b_img, cv.DIST_L2, 3)cd
+d_img = cv.distanceTransform(b_img, cv.DIST_L2, 3)
 # nomalize to 0->1
 cv.normalize(d_img, d_img, 0, 1, cv.NORM_MINMAX)
 #convert to binary image
