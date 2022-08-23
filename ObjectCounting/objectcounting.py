@@ -20,6 +20,7 @@ gray = cv.blur(gray, (3,3))
 # Binarize the image
 thresh = 120
 b_img = cv.threshold(gray, thresh, 255, cv.THRESH_BINARY)[1]
+print(b_img.dtype)
 cv.imshow("binary", b_img)
 contours, hierarchy = cv.findContours(b_img, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
