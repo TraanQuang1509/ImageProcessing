@@ -34,6 +34,8 @@ filter34 = filter3 + filter4
 
 filter5 = filter12 + filter34
 
+# print(filter1.dtype)
+
 cv.imshow('vertical1', filter1)
 cv.imshow('vertical2', filter2)
 cv.imshow('vertical12', filter12)
