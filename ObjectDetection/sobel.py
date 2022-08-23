@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # load image
-img = cv.imread('Lenna.png', cv.IMREAD_COLOR)
+img = cv.imread('trafficSign.jpg', cv.IMREAD_COLOR)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 kernel1 = np.array([[-1, 0, 1],
@@ -22,7 +22,7 @@ kernel4= np.array([[1, 2, 1],
                    [0, 0, 0],
                    [-1, -2, -1]])
 
-gray = cv.GaussianBlur(gray, (5, 5), 0)
+# gray = cv.GaussianBlur(gray, (7, 7), 0)
 
 filter1 = cv.filter2D(src=gray, kernel=kernel1, ddepth=-1)
 filter2 = cv.filter2D(src=gray, kernel=kernel2, ddepth=-1)
@@ -33,6 +33,8 @@ filter4 = cv.filter2D(src=gray, kernel=kernel4, ddepth=-1)
 filter34 = filter3 + filter4
 
 filter5 = filter12 + filter34
+
+canny = cv.Canny(gray, 100, 200)
 
 # print(filter1.dtype)
 
@@ -46,4 +48,7 @@ cv.imshow('vertical34', filter34)
 
 cv.imshow('vertical5', filter5)
 
+cv.imshow('canny', canny)
+
 cv.waitKey(0)
+cv.destroyAllWindows()
