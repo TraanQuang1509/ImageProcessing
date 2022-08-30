@@ -27,10 +27,7 @@ contours, hierarchy = cv.findContours(b_img, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_S
 # # so luong contour 
 print('# of objects', len(contours))
 
-
-# dkfdf
-
-#draw contours 
+#raw contours 
 n = 1
 for c in contours:
     (x, y), radius = cv.minEnclosingCircle(c)
